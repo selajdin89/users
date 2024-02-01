@@ -2,10 +2,22 @@
 import { List, ListItem, ListItemText } from '@mui/material';
 
 import styles from './Comments.module.css';
+import { getLastDigit, isLastDigitZero } from './../../helper';
 const Comments = ({ selectedPost, comments }) => {
   return (
     <div className={styles.commentsContainer}>
-      <h2>Comments</h2>
+      {selectedPost && comments.length !== 0 ? (
+        <h2>
+          Comments on post nr:
+          {selectedPost.id > 10
+            ? getLastDigit(selectedPost.id)
+            : isLastDigitZero(selectedPost.id)
+            ? '10'
+            : selectedPost.id}
+        </h2>
+      ) : (
+        <h2>Comments</h2>
+      )}
       {selectedPost && (
         <div className={styles.comments}>
           <List component='ol' disablePadding>
