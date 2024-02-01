@@ -9,8 +9,8 @@ import {
 } from '@mui/material';
 
 import styles from './Users.module.css';
-import Posts from './posts/Posts';
-import Comments from './comments/Comments';
+import Posts from '../posts/Posts';
+import Comments from '../comments/Comments';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -67,6 +67,7 @@ const Users = () => {
   const handleUserClick = (user) => {
     setSelectedUser(user);
     fetchUserPosts(user.id);
+    setComments([]);
   };
 
   const handlePostClick = (post) => {
