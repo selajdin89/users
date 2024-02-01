@@ -13,7 +13,7 @@ const Posts = ({ selectedUser, userPosts, handlePostClick }) => {
   return (
     <div className={styles.postsContainer}>
       <List component='ol' disablePadding>
-        <h2>Posts</h2>
+        {selectedUser ? <h2>Posts by {selectedUser.name}</h2> : <h2>Posts</h2>}
         {selectedUser && (
           <div className={styles.posts}>
             {userPosts.map((post, index) => (
