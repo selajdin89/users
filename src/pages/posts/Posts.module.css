@@ -1,0 +1,12 @@
+.postsContainer {
+  width: 35%;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  text-align: center;
+}
